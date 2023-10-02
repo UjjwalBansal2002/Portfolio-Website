@@ -154,7 +154,7 @@ section {
 
 .home-content .text-animate {
   position: relative;
-  width: 40rem;
+  width: 30rem;
 }
 
 .home-content .text-animate h3 {
@@ -166,7 +166,7 @@ section {
   background-image: linear-gradient(var(--main-color), var(--main-color));
   background-repeat: no-repeat;
   -webkit-background-clip: text;
-  background-position: -40rem 0;
+  background-position: -30rem 0;
   animation: homeBgText 6s linear infinite;
   animation-delay: 2s;
 }
@@ -186,7 +186,7 @@ section {
   0%,
   10%,
   100% {
-    background-position: -40rem 0;
+    background-position: -30rem 0;
   }
   65%,
   85% {
@@ -481,6 +481,12 @@ span {
 .education-content .content p {
   font-size: 1.6rem;
   padding: 0.5rem;
+  text-align: start;
+}
+.education-content .content p span{
+  font-size: 3rem;
+  position: relative;
+  top: 3px;
 }
 
 .skills {
@@ -579,19 +585,19 @@ span {
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span {
-  width: 90%;
+  width: 60%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span {
-  width: 80%;
-}
-
-.skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span {
   width: 70%;
 }
 
+.skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span {
+  width: 80%;
+}
+
 .skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span {
-  width: 75%;
+  width: 70%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(5) .bar span {

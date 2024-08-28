@@ -1,8 +1,8 @@
 // toggle icon navbar
-let menuIcon  = document.querySelector('#menu-icon');
-let navbar=document.querySelector('.navbar');
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
 
-menuIcon.onclick = ()=>{
+menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 }
@@ -15,26 +15,60 @@ let navLinks = document.querySelectorAll('header nav a')
 
 
 
-window.onscroll = ()=>{
-    sections.forEach(sec =>{
+window.onscroll = () => {
+    sections.forEach(sec => {
         let top = window.scrollY;
-        let offset = sec.offsetTop-100;
-        let height= sec.offsetHeight;
+        let offset = sec.offsetTop - 100;
+        let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
 
-        if(top >= offset && top < offset + height){
+        if (top >= offset && top < offset + height) {
             //active navbar links
-            navLinks.forEach(links =>{
+            navLinks.forEach(links => {
                 links.classList.remove('active');
-                document.querySelector('header nav a[href*='+id +']').classList.add('active');
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
             })
         }
     })
     // sticky header
     let header = document.querySelector('header')
-    header.classList.toggle('sticky', window.scrollY>100);
+    header.classList.toggle('sticky', window.scrollY > 100);
 
     //remove toggle icon and navbar when click navbar links (scroll)
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    function showModal() {
+        document.getElementById('statusModal').style.display = 'flex';
+    }
+
+    // Close modal function
+    function closeModal() {
+        document.getElementById('statusModal').style.display = 'none';
+        // Remove the query parameters from the URL after displaying the modal
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+
+    document.querySelector('.close-btn').addEventListener('click', function () {
+        closeModal();
+    })
+
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+    // Display confirmation message if the email was sent successfully
+    const statusC = getQueryParam('status');
+
+    console.log('Status:', statusC);
+    if (statusC === 'success') {
+        console.log('hsadl')
+        document.getElementById('confirmationMessage').style.display = 'block';
+        showModal();
+    } else if (statusC === 'fail') {
+        document.getElementById('errorMessage').style.display = 'block';
+        showModal()
+    }
+});

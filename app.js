@@ -18,8 +18,9 @@ app.post('/', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail', // e.g., Gmail
         auth: {
-            user: 'bansalujjwal2002@gmail.com',
-            pass: 'mvtw ihbv msxp uwlk'}
+            user: 'bansalujjwal1810@gmail.com',
+            pass: 'efaxlqdrvfvhpxny'}
+            
     });
 
     const mailOptions = {
@@ -32,11 +33,10 @@ app.post('/', (req, res) => {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.error(error);
-            res.send('Error sending email.');
+            res.redirect('/?status=fail');
         } else {
             console.log('Email sent: ' + info.response);
-            res.send('Email sent successfully.');
-            // res.redirect('/')
+            res.redirect('/?status=success')
         }
     });
 });

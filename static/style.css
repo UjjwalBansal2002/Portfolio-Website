@@ -18,6 +18,49 @@
   --main-color: #00abf0;
 }
 
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background-color: var(--second-bg-color);
+  padding: 20px;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 550px;
+  font-size: 20px;
+  text-align: center;
+}
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.confirmation {
+  color: green;
+  margin-top: 10px;
+}
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
 html {
   font-size: 62.5%;
   overflow-x: hidden;
@@ -83,36 +126,35 @@ section {
   display: flex;
   align-items: center;
   padding: 0 9%;
-
 }
-.imgHover{
-    position: relative;
-    top: 0;
-    left: 30vh;
-    width: 35%;
-    height: 100%;
+.imgHover {
+  position: relative;
+  top: 0;
+  left: 30vh;
+  width: 35%;
+  height: 100%;
 }
-@media (max-width:2000px) {
-    .imgHover{
-        left: 20vh;
-    }
+@media (max-width: 2000px) {
+  .imgHover {
+    left: 20vh;
+  }
 }
-@media (max-width:1700px) {
-    .imgHover{
-        left: 15vh;
-    }
+@media (max-width: 1700px) {
+  .imgHover {
+    left: 15vh;
+  }
 }
-@media (max-width:1700px) {
-    .imgHover{
-        left: 10vh;
-    }
+@media (max-width: 1700px) {
+  .imgHover {
+    left: 10vh;
+  }
 }
 
 @media (min-width: 900px) and (max-width: 1500px) {
-    .imgHover{
-        left: 2vh;
-    }
+  .imgHover {
+    left: 2vh;
   }
+}
 
 #bg-img {
   bottom: 0px;
@@ -140,7 +182,7 @@ section {
 
 .home-content {
   max-width: 61rem;
-  z-index: 100;
+  z-index: 5;
 }
 
 .home-content h1 {
@@ -483,7 +525,7 @@ span {
   padding: 0.5rem;
   text-align: start;
 }
-.education-content .content p span{
+.education-content .content p span {
   font-size: 3rem;
   position: relative;
   top: 3px;
